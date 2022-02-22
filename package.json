@@ -1,0 +1,19 @@
+{
+  "name": "tendoapp",
+  "version": "1.0.0",
+  "description": "tendo app api",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon server.js"
+  },
+  "author": "Ned Geeslin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.2"
+  },
+  "resolutions": {
+    "react-test-renderer": "your.reaction.version"
+  }
+}
