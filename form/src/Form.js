@@ -57,7 +57,7 @@ export default function Form(props) {
       setSurveyPage(4);
       let surveyResultsAndId = surveyResults
       surveyResults.id = props.data.id;
-      axios.put("survey", surveyResults);
+      axios.put("survey", surveyResultsAndId);
       setError(false);
     }
     else {
@@ -107,8 +107,8 @@ export default function Form(props) {
             <input type="radio" name="yes_no" onClick={() => setInput('Yes')}/><span>Yes</span>
             <input type="radio" name="yes_no" onClick={() => setInput('No')}/><span>No</span>
             <div>Please Explain:</div>
-            <input type="text" onInput={(e) => setTextInput(e.target.value)}/>
-            <input type="submit" onClick={setExplination}></input>
+            <div><input type="text" className="textInput" onInput={(e) => setTextInput(e.target.value)}/></div>
+            <div><input type="submit" onClick={setExplination}></input></div>
             {errorMessage()}
           </div>
           )
@@ -116,8 +116,8 @@ export default function Form(props) {
             return(
               <div>
                 <p>We appreciate the feedback, one last question: how do you feel about being diagnosed with {diagnosis.resource.code.coding[0].name}?</p>
-                <input type="text" value={input} onInput={(e) => setTextInput(e.target.value)}/>
-                <input type="submit" onClick={setFeeling}></input>
+                <div><input type="text" className="textInput" value={input} onInput={(e) => setTextInput(e.target.value)}/></div>
+                <div><input type="submit" onClick={setFeeling}></input></div>
                 {errorMessage()}
               </div>
             )
